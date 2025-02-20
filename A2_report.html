@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 2</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 2</small>
+			Exploratory Data Analysis
+		</h1>
+
+		<p>
+			<strong>Martin Peticco</strong> — <em>mpeticco@mit.edu</em>
+		</p>
+	</header>
+	<main>
+		<section>
+			<h2>Subtheme: Transit-Oriented Development</h2>
+
+			<h3>Introduction</h3>
+			<p>Cities in the United States act as socioeconomic hubs that bring together vast quantities of people who work a variety of jobs, attend school, partake in leisure activities, and access vital needs, such as healthcare. In such densely-packed hubs, public transportation is paramount in ensuring that every member of the community is able to go about their daily lives, transporting individuals in a manner that is efficient, sustainable, and scalable. This aligns with the need for dense, lower-cost housing. As such, the idea of developing the surrounding areas of the city with transit as a critical consideration, known Transit-Oriented-Development (TOD), faces scrutiny between numerous stakeholders that lie on a spectrum between dense housing and spread out, single-family homes. In this preliminary report, we seek to better understand TOD by exploring data in the Greater Boston Area from a variety of sources, and leveraging visualizations to gain an intuitive understanding of factors such as housing density, transit proximity, corporate ownerships, zoning, historically marginalized communities, and broader housing trends.
+			</p>
+
+			<h3>Overall Analysis Questions</h3>
+			<ol>
+				<li>How can we build support for TOD and address the concerns of local residents and stakehulders, particularly around zoning changes and in light of the MBTA Communities Act?</li>
+					<ul><li>The provided overview for TOD mentions concerns by suburban communities such as Milton and Chelsea by the Sea regarding density, traffic, and loss of neighborhood character. It is also mentioned in an article from Assignment 1 (Houses are too expensive. Apartments are too small. Is this a fix?) that developers push back against zoning reform and upzoning due to concerns about property value and investment as well. Finally, page 24 of the MAPC report mentions “with increased demand for housing comes the potential for displacement of low-income, minority, immigrant, and transit-dependent populations”. Answering this question is fundamental in ensuring that people who can benefit from these reforms are informed and can express their support, while those who may not financially benefit can understand the necessity of the reforms for the benefit of the community.</li></ul>
+				<li>How does TOD impact equity and inclusion in historically marginalized communities affected by redlining and zoning segregation?</li>
+					<ul><li>The “Transforming the Urban Space Through Transit-Oriented Development: The 3V Approach“ article mentions that by allocating part of the new development to affordable housing, we can enhance job opportunities and services for low income residents, in light of the risk of gentrification from TOD that does not take low-income and marginalized communities into consideration. Page 10 of the MAPC report states that “"More housing near transit is needed to meet this growing demand and to prevent displacement of low- and moderate-income families living in transit-rich neighborhoods as real estate prices rise.” Evidently, although TOD can be had with the intent of improving equity and inclusion in historically marginalized communities, doing so without deliberate thought could potentially have the opposite effect, pushing low-income individuals out. Answering this question will ensure that TOD benefits historically marginalized communities. </li></ul>
+				<li>What are the key rules of different stakehulders in promoting TOD in the Greater Boston area? </li>
+					<ul><li>The main overview mentions that TOD has experienced pushback due to transit being a public investment and TOD itself requiring planning and coordination among various stakehulders. For this reason, it is important to acknowledge who the key stakehulders are in TOD and what their rules are. This includes residents in the areas surrounding the transit stations, real estate developers, the transit agencies (MBTA in Boston’s case), local governments, and local businesses, as mentioned in mass.gov’s description of multi-family zoning. I observe this simply walking through different areas of Boston, observing the disparities between highly commercial areas, neighborhoods with towering luxury glass skyscrapers, and dense, aging apartment buildings. Addressing this question will ensure TOD can occur under the support of the community and without prohibitive roadblocks. </li></ul>
+				<li>Presently, to what level is housing in Boston structured in a manner that correlates with transit accessibility? How will it change in the future?</li>
+					<ul><li>This question is fundamental in the study of TOD. Housing in Boston has always been influenced by public transit, and public transit has long been built to conform to the needs of housing. It is important to understand to what level transit and housing are intertwined at the present in order to push further transit-oriented development in the correct direction. </li></ul>
+			</ol>
+
+
+			<h3>Data Sources Used</h3>
+			<p>The following provided datasets were used in this data-driven exploration of Transit-Oriented Development in Boston.</p>
+			<ul>
+				<li>Condo Conversions in City of Boston 2015-2024</li>
+					<ul><li>This dataset was augmented using geocoding to obtain spatial latitude and longitude values from provided street names.</li></ul>
+				<li>Corporate ownership rates and owner occupancy rates in Boston neighborhoods, 2004-2024</li>
+				<li>MBTA Network</li>
+				<li>Redlining</li>
+				<li>Residential sales data in the City of Boston, 2000-2023</li>
+				<li>Single family zoning vs other housing zoning in Metro Boston</li>
+			</ul>
+
+		</section>
+
+		<section>
+			<h2>Discoveries & Insights</h2>
+
+			<figure>
+				<img src="Plots/Single Family Zoning along MBTA Lines.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+				Single-family zoning along MBTA transit lines, illustrating how zoning policies affect housing density and development.
+				</figcaption>
+			</figure>
+
+
+			<figure>
+				<img src="Plots/MBTA Stops vs Single-Family Homes.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+				The number of MBTA stops and the prevalence of single-family homes in surrounding neighborhoods, showing the effects of zoning on development.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Plots/Number of MBTA Stops by Municipality.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+				Distribution of MBTA stops across municipalities, providing insight into the transit accessibility and urban planning priorities in different areas.
+				</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="Plots/Redlining and MBTA.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+				A historical view of redlining practices in relation to MBTA transit routes, emphasizing long-standing effects on marginalized communities.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Plots/MBTA Communities Demographics.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+				Communities serviced by the MBTA broken down by demographic, highlighting variations in population characteristics across different transit corridors.
+				</figcaption>
+			</figure>
+
+
+			<figure>
+				<img src="Plots/Owner-Occupancy Rate in Marginalized Communities.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+				Owner-occupancy rates in historically marginalized communities along MBTA routes, highlighting disparities in homeownership across different demographics.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Plots/Single Families Marginalized.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+				Single-family rates in marginalized communities, examining the impact of zoning laws and access to transit.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Plots/Condo Conversions along MBTA Lines.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+				Condominium conversions in communities along the MBTA transit lines, showing development trends and density changes.
+				</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="Plots/Residential Sales over MBTA Lines.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+				Trends in residential sales within Boston overlaid with MBTA lines, showing the influence of transit accessibility on the housing market.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Plots/Price Change in Residential Flip.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+				Price changes in flipping of residential properties, showcasing the economic impact of property redevelopment near MBTA transit lines.
+				</figcaption>
+			</figure>
+
+		</section>
+
+		<section>
+			<h2>Summary</h2>
+
+			<p>WRITE FINAL SUMMARY HERE.</p>
+		</section>
+	</main>
+</body>
+</html>
