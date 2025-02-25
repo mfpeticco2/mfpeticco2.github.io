@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 3</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 3</small>
+			Visualization Critique & Redesign
+		</h1>
+
+		<p>
+			<strong>Martin Peticco</strong> — <em>mpeticco@mit.edu</em>
+		</p>
+	</header>
+
+	<main>
+		<section>
+			<h2>Reading & Critique</h2>
+
+			<figure>
+				<img src="https://vis-society.github.io/assets/imgs/covid-spiral.png" alt="" style="width: 100%; height: auto;"/>
+			</figure>
+
+			<p>
+				Insights about the data/visualization:
+			</p>
+
+			<ul>
+                <li>The visualization is intended to communicate the number of new COVID cases as the COVID-19 pandemic progressed. We see the start of the timeline near the center, and time progresses along a spiral axis, with the number of new cases denoted by the width of the line.</li>
+				<li>Cases for the first half-year of the pandemic were very little - it did not start with a massive outbreak, but rather a relatively gradual burn.</li>
+				<li>Cases were at their highest in January 2022 and January 2021, right after the holiday season where travel is at its highest, and people are more likely to forego social distancing precautions in order to see their families and friends. January is also in the winter, where weather is cold and viruses spread more easily, along with the population's immunity being at its lowest.</li>
+				<li>For both 2020 and 2021, cases were lowest around June. This could be due to summer break for schools, higher population immunity as a result of high cases in the winter, or the fact that viruses spread less easily in warm weather.</li>
+			</ul>
+
+			<p>
+				Design Critique:
+			</p>
+
+			<p>
+                Despite the controversy and criticism this visualization has received, it has some notable strengths. The spiral chart is unconventional and visually striking, which grabs the reader's attention. It also implements a relatively long timeline without extending too far vertically or horizontally. Its design makes it easy to compare points in time a year apart, with each revolution representing one year. This effectively highlights seasonal trends, such as comparing COVID-19 rates in January 2020, 2021, and 2022. Also, the starting point of the spiral is immediately clear, being at the center and guiding the viewer in interpreting the data chronologically.
+
+                However, there are still notable issues with this spiral diagram. While the changing width of the spiral allows for local comparisons, comparing points on opposite sides is unintuitive due to the lack of a proper y-axis scale and the effect of the spiral's rotation. This makes internalizing the progression of COVID-19 over time more difficult, which is one major purpose of this visualization. Additionally, the absence of labels for all months requires the reader to expend effort in deducing which month each line represents. It is also often unclear what year is being shown at any given point, as the starts and ends of the years are not denoted clearly. Finally, the spiral's inherent property of increasing in radius introduces temporal inconsistency, as the same span of time will be short or longer depending on how close to the center of the spiral it is.
+            </p>
+		</section>
+
+		<section>
+			<h2>Visualization Sketches</h2>
+
+      <figure>
+				<img src="Plots/A3/Sketch1.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+                    A spiral chart showing the 7-day averages of new COVID-19 cases in the United States. Each year starts at the right hand side, with each loop corresponding to a year.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 1:
+			</p>
+
+			<ul>
+				<li>This graph aims to maintain the style of the spiral graph along with its merits, as described above, while addressing the critiques.</li>
+				<li>To address the difficulty in distinguishing the different months, I gave each month a dotted line and a label. I also placed the labels on the direction of the line indicating forward passing in time. This makes it clear that the line itself is not the month, but the spaces between the lines.
+                </li>
+				<li>To address the lack of clarity as to when the years start and end, I have rotated the graph 90 degrees to allow the "January" marker to be prominent on the right side, along with dots to denote the starts of the years. I also made the spiral offset so that the starts of the years are close together, and the halfway-points of the years are farther apart, to further reduce confusion.</li>
+                <li>I replaced the continuously changing width of the line with 5 discrete levels of width and color. This gives the graph a clear axis where you can glance at any point on the line, and tell based on both color and size how many cases there were. This also addresses the issue of the 7-day average on the original plot being difficult to compare to other points of the graph. It is important to note that for making an actual version of this plot, the lines will need to be standardized as to if they refer to a single day sampled from the data, or if each line represents 3 days, etc.
+                </li>
+                <li>The graph still maintains the merits of the original plot, in that it is easy to compare the same month across two years, it is still visually striking, there is a lot of "resolution" in the line due to it spiraling, and clarity as to the start of the graph (reading the start of the spiral left to right).</li>
+                <li>The spiral format is still limited to showing all data on a single line, which limits the amount of additional insights and data we can add to the graph. For example, adding a line for cumulative cases can begin to get messy. In the next sketch, I want to explore a completely different style of plot that also shows cumulative cases.</li>
+			</ul>
+
+			<figure>
+				<img src="Plots/A3/Sketch2.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+                    A stacked and centered line chart that compares 7-day averages of COVID-19 cases both daily and cumulatively from 2020 to 2022, with daily shown in blue and cumulative shown in red. 
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 2:
+			</p>
+
+			<ul>
+				<li>The goal of this chart is to integrate both daily and cumulative cases while maintaining many of the advantages of the spiral graph. To accomplish this, the chart has two main distinctive features. First, daily and cumulative cases are overlaid. Second, there is a separate line chart for each year, vertically stacked.</li>
+				<li>The overlaid cases allows the reader to observe not only the severity of COVID cases at a given point in time, but also the overall context to where the world was in the context of the entire pandemic. Different colors are used to delineate these - for a print friendly, monochrome option, we could do different line styles, such as solid and dotted.</li>
+				<li>The separated and vertically stacked plots allows us to retain the advantages of the spiral plot, mainly the ability to easily compare different months between years, and the higher "resolution" we get by having more line space to work with, rather than having all three years shown on a single line. </li>
+                <li>Separating and vertically stacking the plots also makes it very natural for the reader to consider the pandemic year-by-year, and to make the monthly comparisons as described before. </li>
+                <li>One potential issue with this graph could be difficulty in reading the cumulative and daily lines separately when they are closely atop one another. In the next graph, I'd like to explore a different method of showing two metrics on the same timeline.</li>
+			</ul>
+
+			<figure>
+				<img src="Plots/A3/Sketch3.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+                    A circular chart comparing 7-day case and death averages for COVID-19 from 2020 to 2022. The chart shows deaths in the inner circle, and cases in the outer circle, with different colors denoting different years.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 3:
+			</p>
+
+			<ul>
+				<li>The goal for this visualization was to show both daily COVID cases and daily COVID deaths while still maintaining the advantages of the previous graphs. More specifically, this includes clearly delineated months, easy year-to-year comparisons and easily distinguished years.</li>
+				<li>Instead of a spiral, we overlay all years on the same circle. This maintains temporal consistency between years and makes year-to-year comparisons at any point on the line very clear and intuitive. Years are separated by color for clarity.</li>
+				<li>Deaths are shown on the inner side of the circle, and cases are shown on the outside.</li>
+                <li>The scales for each metric are placed on the first month's marker line to draw the reader's eye to the start of the plot.</li>
+                <li>Each month is given its own label, placed between the marker lines for clarity. Also, each marker line gets tick lines so it is easy to decipher values from the lines at any point in the circle.</li>
+                <li>This graph accomplishes all the above qualities, however it is a bit messy and confusing at first glance. Also, the transitions between years, and thus between colors, is not very visually appealing.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Final Visualization Design</h2>
+      
+			<figure>
+				<img src="Plots/A3/FinalPlot.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+                A multi-year line chart comparing the daily confirmed COVID-19 cases (blue) and cumulative cases (red) in the United States from 2020 to 2022. Each year is plotted separately, allowing for a clear comparison of trends in case numbers over time.
+				</figcaption>
+			</figure>
+
+		</section>
+
+		<section>
+			<h3>Design Process & Design Decisions</h3>
+
+			<p>
+                This chart integrates both daily and cumulative cases of COVID-19 while maintaining many of the benefits of a spiral graph. Daily and cumulative cases are overlaid in two different colors to allow the reader to gauge the severity of cases at any given point in the graph, while also putting that data point in the context of the entire pandemic's cumulative cases. Additionally, the data is separated and vertically stacked by year, allowing for more line space and thus a higher resolution depiction of the data. The stacked layout also retains the spiral graph's advantage of easy year-to-year comparisons, with months clearly denoted between the grid lines. All in all, this layout encourages the reader to think of the pandemic in cyclical yearly phases with seasonal trends. One potential drawback with this design is the difficulty in distinguishing the cumulative and daily lines when they converge closely. However, I believe this graph is an improvement on the original spiral graph visualization while maintaining many of its original advantages.
+            </p>
+
+      <h3>Reflection</h3>
+
+            <p>
+                My first critique of the spiral graph was that comparisons on far locations of the spiral were difficult to make due to the lack of a proper y-axis. My variation of the plot has proper y-axes and is linear, which makes comparisons easier. Another issue was the lack of clarity in the month labels, which I resolved by including labels for all the months and offsetting them to be between the grid lines, rather than aligned with them. I also addressed the lack of clarity as to what year is being observed by having a separate x-axis line for each year. Finally, I addressed the temporal consistency issues by having all x-axes scaled the same. Even while addressing these issues, the graph still maintains the advantage of being compact due to splitting a long line chart into three shorter stacked ones, the ability to easily compare the same month across different years, and the start of the graph being at the top left, much like reading a page of text. The only issue that remains is the lack of clarity in distinguishing cumulative and daily lines when they are close together. However, this "critique by redesign" allowed me to uncover these issues and advantages in the original plot and create a visualization that I believe effectively communicates the intended messages of the original plot, regarding the cyclical and seasonal nature of COVID. 
+            </p>
+		</section>
+	</main>
+</body>
+</html>
