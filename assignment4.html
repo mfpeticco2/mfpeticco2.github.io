@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 3</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 4</small>
+			Persuasive or Deceptive Visualization?
+		</h1>
+
+		<p>
+			<strong>Martin Peticco</strong> — <em>mpeticco@mit.edu</em>
+		</p>
+	</header>
+
+	<main>
+
+	<h2>Introduction</h2>
+		<p>The dataset selected was the “Civilian Complaints Against New York City Police Officers”. I chose to focus on observing the percentage of substantiated claims and how it relates to racial demographics. Since police hostility targeted toward individuals of the black population is a hot button topic in the United States, I decided to focus my analysis on black demographics. 
+		</p>
+
+		<p>The dataset gives metrics by precinct, which are different geographical areas covered by certain NYPD stations. To augment this data, I am using demographic information from the <a href="https://johnkeefe.net/nyc-police-precinct-and-census-data">U.S. Census</a> to plot the percentage of black population by precinct. This involved using geocoding to split up U.S. census information by precinct.</p>
+
+		<p>To clean the data, I first removed any entries for which there was no substantiation information so as to not throw off any computed percentages. Then, for the U.S. census data, I mapped complaint data from precinct 105 to both precinct 105 and 116. I did this because precinct 116 did not exist until <a href="https://www.qchron.com/editions/eastern/nypd-105th-a-tale-of-two-precincts/article_5b7abfac-9261-5d7d-9165-dbae2af4635d.html">precinct 105 was split in 2014</a>,  and the complaint data does not contain information for 105 and 116 separately. Otherwise, our plot map plot would have had a chunk missing.
+		</p>
+
+    <h2>Proposition: Substantiation rates of NYPD complaints show minimal relationship with precinct racial demographics</h2>
+
+		<section>
+      <h3>FOR the Proposition</h3>
+
+      <figure>
+				<img src="Plots/A4/substantiatedFor.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+					A scatter plot of the percentage of Black population and the percentage of unsubstantiated complaints within each NYPD precinct. The red trendline is nearly flat, and wide data point spread shows little to no relationship, suggesting the disconnect between precinct racial demographics and unsubstantiated complaints.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Decisions and Rationale:
+			</p>
+
+			<ul>
+				<li>The title "Disconnect between Untruthful NYPD Complaints and Black Population by NYPD Precinct" suggests that the two metrics are not correlated in order to convince the reader of the proposition from the beginning.
+					<ul>
+						<li><strong>Score: -1</strong>: While it is not maliciously deceptive, it does push the reader to think less critically about the data and not draw their own conclusion. While a reader's first impression of this title could be that the author is trying to persuade them, the title is genuinely descriptive of the trends shown in the data, which makes me believe this won't cause the reader to immediately believe they are being deceived. Otherwise, I did explore making an entirely neutral title, but that did not seem to be in the spirit of this assignment.</li>
+					</ul>
+				</li>
+				<li>This plot shows "Unsubstantiated", meaning the accusations in the complaint were false and no rules were broken. This is the appropriate metric for the truthfulness of the complaints made.
+					<ul>
+						<li><strong>Score: 2</strong>: Since the "unsubstantiated" metric is the appropriate metric to represent the untruthfulness of the complaints, this is a decision done in earnest. Plotting any other combination of variables was not as visually supportive of the proposition.</li>
+					</ul>
+				</li>
+				<li>Linear regression was performed to generate a relatively flat trendline, showing a lack of relationship between the two metrics.
+					<ul>
+						<li><strong>Score: 1.5</strong>: Adding a regression line is an earnest visualization technique to sum up the general correlation between two data variables, which in our scenario, because two variables genuinely are very weakly correlated, is effective in arguing for the proposition.</li>
+					</ul>
+				</li>
+				<li>Population size by precinct, which is very uncorrelated with the two metrics we are plotting, is plotted using a color scale.
+					<ul>
+						<li><strong>Score: -2</strong>: This metric is being added with the specific intent of distracting the reader from the main information in the plot and biasing them more into thinking the two variables are uncorrelated. The metric is somewhat relevant, however, and should not raise much suspicion to the reader, and can be written off as just being added for context.</li>
+					</ul>
+				</li>
+				<li>The plot itself was made with a wide aspect ratio in order to make the trend line appear more flat (and thus show less correlation).
+					<ul>
+						<li><strong>Score: -1</strong>: Although this decision does not lie to the reader, it is specifically being done to exaggerate an existing trend, which in this case is the already somewhat-flat trendline. I believe I struck a good balance in the aspect ratio to sway the reader in this direction without obviously being an overly-stretched plot.</li>
+					</ul>
+				</li>
+				<li>Data sources were cited to increase the reader's trust in the data and the plot.
+					<ul>
+						<li><strong>Score: 2</strong>: Citing data sources is an earnest technique that builds trust and transparency in the analysis. It allows viewers to verify the data and understand where it comes from, adding to the credibility of the visualization. Not citing data sources would have likely raised suspicion regarding the truthfulness of the data.</li>
+					</ul>
+				</li>
+			</ul>
+    </section>
+
+    <section>
+      <h3>AGAINST the Proposition</h3>
+
+      <figure>
+				<img src="Plots/A4/substantiatedAgainst.png" alt="" style="width: 100%; height: auto;"/>
+				<figcaption>
+					Two choropleth maps comparing NYPD precincts by their percentage of unsubstantiated complaints (left) and percentage of Black population (right). The maps show a visual correlation between precincts with higher percentages of Black population and higher percentages of unsubstantiated complaints, suggesting a relationship between precinct racial demographics and unsubstantiated complaints.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Decisions and Rationale:
+			</p>
+
+			<ul>
+				<li>The title "Correlation between Non-Substantiated NYPD Complaints and Black Population by NYPD Precinct" suggests that these two metrics are correlated to persuade the reader.
+					<ul>
+						<li><strong>Score: -1.5</strong>: This title also pushes the reader to think less critically about the data and sway their conclusion. However, to prevent the title from overtly lying about the data (since the data shows little correlation and we are trying to show correlation), I used the word "correlation" alone, rather than "strong correlation". This way, the title can be argued to be neutral, as it directly states no particular strength of correlation, but implies there is one.</li>
+					</ul>
+				</li>
+				<li>We are plotting "Non-substantiated", meaning the complaint was either Exonerated (the accusations were true, but the NYPD board deemed no rules were broken) or Unsubstantiated (the accusations were false and no rules were broken). This makes the reader believe that the plot is showing areas where NYPD complaints contained false claims, when in reality, it is showing the board deciding no rules were broken.
+					<ul>
+						<li><strong>Score: -2</strong>: This technique is most certainly deceptive as it relies on the reader assuming "not substantiated" means "not truthful", which is not true. For someone very well versed in the topic and who specifically knows this dataset and the dataset's encodings, there is a potential for them to notice the difference between "unsubstantiated" and "non-substantiated". However, for the vast majority of readers, and even many of these experts, it is reasonable to assume the two terms can be used interchangeably.</li>
+					</ul>
+				</li>
+				<li>The two colors used for the two plots are vaguely similar to subconsciously suggest similarity.
+					<ul>
+						<li><strong>Score: -0.5</strong>: I had some trouble scoring this design decision, as I imagine a scenario in which the data does truthfully show a strong trend, and one could make the design decision to use similar colors to accentuate that, making it seem earnest. However, I decided that even in such a scenario, it can still be considered deceptive as it is potentially encouraging the reader away from drawing their own conclusion.</li>
+					</ul>
+				</li>
+				<li>The two color scales used are sequential, with small values being lighter and large values being darker.
+					<ul>
+						<li><strong>Score: 2</strong>: Because the data is sequential in nature, making the color scales also sequential is natural, and just so happens to be useful for arguing against the proposition. Other color scales - such as diverging, cyclic, qualitative, etc are not natural choices for this data.</li>
+					</ul>
+				</li>
+				<li>The scaling of the colors were tuned and adjusted in a manner that exaggerates the data trends. In other words, instead of transitioning linearly from white to purple, the scale is at the "50% white 50% pink" point roughly 60% down the scale, rather than at the 50% mark. The pink scale is also adjusted. This brings out darker shades in the purple plot and lightens shades in the pink plot to make the plots as visually similar as possible.
+					<ul>
+						<li><strong>Score: -2</strong>: This tactic specifically adjusts the color scale to amplify certain portions of the data to make the two plots visually similar and suggest correlation, which is deceptive. I spent considerable effort into adjusting these colorbars such that their gradient transitions happen in similar locations, manipulating the tick markings to appropriate locations to argue against the proposition.</li>
+					</ul>
+				</li>
+				<li>Four precincts that were separate from the rest of NYC, but also happened to support the proposition, were removed.
+					<ul>
+						<li><strong>Score: -2</strong>: Omitting outliers to support the claim is definitely a deceptive tactic, but unless the reader specifically knows that those four precincts exist, it would be very unlikely for a reader to notice this. I especially believe this to be the case since these four precincts are very separated from the rest of NYC.</li>
+					</ul>
+				</li>
+				<li>Data sources were cited to increase the reader's trust in the data and the plot.
+					<ul>
+						<li><strong>Score: 2</strong>: Citing data sources is an earnest technique that builds trust and transparency in the analysis. It allows viewers to verify the data and understand where it comes from, adding to the credibility of the visualization. Not citing data sources would have likely raised suspicion regarding the truthfulness of the data.</li>
+					</ul>
+				</li>
+			</ul>
+    </section>
+
+    <section>
+      <h2>Final Reflection</h2>
+
+      <p>When approaching the design for this visualization, I first looked at the data available to me in the dataset, comparing different fields and computing correlation values in a python script to see what combination of similar fields produce varying results. Then, with my metrics selected, I tried to figure out two visualizations that would both allow comparison of the correlation between the metrics, but with opposing messages. This is how I landed on using a scatter plot to argue FOR the proposition, as the dataset does support the proposition, with a weak correlation of ~0.13. So, using a plot that allows very clear comparison through scattered, disorderly points to observe a lack of correlation between the data made a scatter plot an appropriate choice. However, in the visualiation arguing AGAINST the proposition, the goal is to greatly exaggerate this tiny amount of correlation. I figured two side-by-side maps were an excellent choice for this, as it allows the reader to make a correlation comparison, however the varying sizes of the precincts and the requirement for darting one's eyes between the two plots makes it possible to manipulate the visualization. 
+
+	  I personally was surprised at how it was even possible to to manipulate the data and visualization to argue two opposite sides of an argument using the same dataset. In certain ways, it was relatively simple and straightforward, such as setting the title and adjusting plot sizes, but it was also difficult and required a lot of trial and error in other ways, such as manipulating the color scales on the map plot, and introducing an appropriate distraction metric on the scatter plot. Doing this assignment made me realize that the idea of deceptive visualization is seperate from the truthfulness of the data - the data can be entirely true, but the way it is presented can be deceptive. From this, I would define “ethical analysis and visualization” as presenting data in a way that allows the viewer to arrive at their own conclusions without being steered by the author's bias. The main bound I drew for this was that, if a design feature is added to illustrate a trend in the data, it is likely ethical. However, if a design feature is added to exaggerate a trend in the data, it is likely deceptive or misleading. This is a very fine line, and I believe that the most important thing is to be transparent about the design decisions made in the visualization, so that the viewer can understand the author's intent and make their own conclusions.</p>
+	</section>
+
+	<section>
+	  <h2>References</h2>
+
+	  <p>
+		<a href="https://johnkeefe.net/nyc-police-precinct-and-census-data">U.S. Census</a>
+	  </p>
+    </section>
+	</main>
+</body>
+</html>
